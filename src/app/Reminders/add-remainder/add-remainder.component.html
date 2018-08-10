@@ -1,0 +1,55 @@
+<mat-card>
+
+  <form (submit)="onSave(saveRemainder)" #saveRemainder="ngForm" >
+
+        <mat-form-field>
+          <input matInput type="text" name="title"  [(ngModel)]="title" placeholder="Enter title" #titleInput="ngModel" required >
+          <mat-error *ngIf="titleInput.invalid"> Please Enter  a title</mat-error>
+         </mat-form-field>
+
+          <mat-form-field>
+            <input matInput type="text" name="Description"  [(ngModel)]="Description" placeholder="Enter Description" #DescInput="ngModel" required >
+            <mat-error *ngIf="DescInput.invalid"> Please Enter  a Desc</mat-error>
+            </mat-form-field>
+
+
+
+
+            <!-- <div class="form-group">
+
+              <input type='datetime-local' class="form-control" name="startDate" value="2017-06-01T08:30" required ngModel>
+              </div> -->
+
+              <angular2-date-picker [(ngModel)]="startDate" [settings]="settings" name="startDate"></angular2-date-picker>
+              <br>
+
+            <mat-form-field>
+              <mat-select [(value)]="selectedValue" placeholder="Remainder Type" name="Remainder Type" >
+                <mat-option value="notRepeat">Doesn't repeat</mat-option>
+                <mat-option value="Repeat">Daily</mat-option>
+                <mat-option value="Weekly">Weekly</mat-option>
+              </mat-select>
+            </mat-form-field>
+
+<!--
+            <div class="form-group">
+
+              <input type='datetime-local' class="form-control" name="endDate" value="2017-06-01T08:30" required ngModel>
+              </div> -->
+
+           <angular2-date-picker [(ngModel)]="endDate" [settings]="settings" name="endDate"></angular2-date-picker>
+
+<br>
+
+
+      <button
+      mat-raised-button
+      color="primary"
+      type="submit">Save Remainder
+    </button>
+
+
+
+</form>
+
+</mat-card>

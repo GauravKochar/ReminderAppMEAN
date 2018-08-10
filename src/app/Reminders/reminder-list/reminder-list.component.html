@@ -1,0 +1,22 @@
+
+<mat-accordion *ngIf="reminders.length>0">
+
+  <mat-expansion-panel *ngFor="let reminder of reminders">
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+       {{reminder.title}}
+      </mat-panel-title>
+
+    </mat-expansion-panel-header>
+    <p>{{reminder.description}}</p>
+
+
+    <mat-action-row>
+       <a mat-button color="primary"  [routerLink]="['/view',reminder._id]">View</a>
+      <a mat-button color="primary" [routerLink]="['/edit',reminder._id]">Edit</a>
+      <button mat-button color="warn" (click)=" OnDelete(reminder._id) "> Delete</button>
+    </mat-action-row>
+
+  </mat-expansion-panel>
+</mat-accordion>
+<p class="mat-body-1 info-text" *ngIf=" reminders.length<=0 "> No Reminders yet !</p>

@@ -7,7 +7,7 @@
 
 # dependencies
 /node_modules
-
+/backend/config/keys.js
 # IDEs and editors
 /.idea
 .project
