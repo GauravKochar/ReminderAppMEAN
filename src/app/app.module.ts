@@ -12,7 +12,7 @@ import { MatInputModule,
   MatButtonModule, MatToolbarModule,
    MatExpansionModule, MatProgressSpinnerModule,
    MatPaginatorModule, MatDialogModule, MatDatepickerModule, MatNativeDateModule,
-   MatSelectModule, MAT_DIALOG_DATA, MatDialogRef, MatDialog} from '@angular/material';
+   MatSelectModule, MAT_DIALOG_DATA, MatDialogRef, MatDialog, MatTableModule} from '@angular/material';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpModule } from '@angular/http';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
@@ -22,6 +22,9 @@ import { AuthInterceptor } from './auth/auth-interceptor';
 import { AngularDateTimePickerModule } from 'angular2-datetimepicker';
 import { ReminderListComponent } from './Reminders/reminder-list/reminder-list.component';
 import { ViewReminderComponent } from './Reminders/view-reminder/view-reminder.component';
+import { ChatComponent } from './chat/chat.component';
+import { UsersListComponent } from './Users/users-list/users-list.component';
+
 
 
 @NgModule({
@@ -32,7 +35,9 @@ import { ViewReminderComponent } from './Reminders/view-reminder/view-reminder.c
     HeaderComponent,
     AddRemainderComponent,
     ReminderListComponent,
-    ViewReminderComponent
+    ViewReminderComponent,
+    ChatComponent,
+    UsersListComponent
   ],
   imports: [
     HttpClientModule,
@@ -55,7 +60,8 @@ import { ViewReminderComponent } from './Reminders/view-reminder/view-reminder.c
     MatNativeDateModule,
     MatSelectModule,
     AngularDateTimePickerModule,
-    MatDialogModule
+    MatDialogModule ,
+     MatTableModule
 
 
   ],

@@ -54,9 +54,9 @@ exports.addReminder = (req,res,next) => {
 
   exports.checkReminder = function() {
     const now=new Date();
-    console.log(now);
+
      Reminder.find({}).then(results => {
-    console.log(results);
+
         results.forEach(element => {
 
 
@@ -100,7 +100,7 @@ exports.addReminder = (req,res,next) => {
   exports.getReminders = function(req,res,next) {
     Reminder.find({'userId': req.userData.user}).then(reminderList => {
       res.status(200).json({
-        reminderList: reminderList
+       reminderList: reminderList
       })
 
     }).catch(err => {

@@ -34,8 +34,12 @@ export class SignupComponent implements OnInit , OnDestroy {
         if ( form.invalid)        {
           return;
         }
+        if ( form.value.password !== form.value.verifypassword) {
+          alert('password is not matching');
+        } else {
+          this.authService.createUser(form.value.email, form.value.password, form.value.username);
+        }
 
-        this.authService.createUser(form.value.email, form.value.password);
     }
 
 }

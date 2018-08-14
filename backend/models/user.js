@@ -5,10 +5,10 @@ const userSchema= mongoose.Schema(
     email:{ type:String ,required: true, unique:true},
     password:{ type:String },
     username : { type:String },
-    googleId:{ type:String }
-
+    googleId:{ type:String },
+    followers:{ type: Array},
+    following: {type: Array}
   }
-
 );
 userSchema.plugin(uniqueValidator);
 

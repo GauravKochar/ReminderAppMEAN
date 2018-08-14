@@ -1,10 +1,19 @@
 <mat-toolbar color="primary">
-  <span> <a routerLink ="/">My Reminders</a></span>
+  <span> <a routerLink ="/reminderList">My Reminders</a></span>
+  <span class="littleSpacer"></span>
+  <span> <a routerLink ="/addReminder">Add Reminders</a></span>
+  <span class="littleSpacer"></span>
+  <span> <a routerLink ="/Users">Users</a></span>
   <span class="spacer"></span>
+
+
+
   <ul>
     <li *ngIf="userIsAuthenticated">
     <a mat-button routerLink="/addReminder" routerLinkActive="mat-accent">New Reminder</a>
     </li>
+
+
 
         <li *ngIf="!userIsAuthenticated">
         <a mat-button (click)="openDialog()" routerLinkActive="mat-accent">Login</a>

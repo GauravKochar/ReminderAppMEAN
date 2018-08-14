@@ -22,10 +22,11 @@ export class AuthService {
         return this.authStatusListener.asObservable();
     }
 
-  createUser(email: string , password: string)   {
+  createUser(email: string , password: string, username: string)   {
       const authData: AuthData = {
           email: email,
-          password: password
+          password: password,
+          username: username
       };
     this.http.post(BACKEND_URL + '/signup', authData).subscribe(() => {
 
@@ -38,7 +39,7 @@ export class AuthService {
 
   }
   getUserId()  {
-      return this.userId;
+      return localStorage.getItem('userId');
   }
 
     getToken()     {
@@ -49,7 +50,7 @@ return this.isAuthenticated;
       }
 
   login(email: string , password: string )   {
-       const authData: AuthData = {
+       const authData: any = {
           email: email ,
           password: password
       };

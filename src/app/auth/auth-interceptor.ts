@@ -9,12 +9,12 @@ export class AuthInterceptor implements HttpInterceptor {
     constructor(private authService: AuthService) {    }
 
         intercept(req: HttpRequest<any> , next: HttpHandler) {
-            console.log('first');
+            console.log('first token');
             const authToken = this.authService.getToken();
             const authRequest = req.clone({
                 headers: req.headers.set('Authorization', 'Bearer ' + authToken)
             });
-            console.log(authToken, authRequest);
+            console.log('lgA AUTH TOKEN', authToken, authRequest);
          return next.handle(authRequest);
         }
 }

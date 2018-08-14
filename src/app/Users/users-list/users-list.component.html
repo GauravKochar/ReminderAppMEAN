@@ -1,0 +1,44 @@
+<!-- <div *ngIf="DataSource.length>0">
+<table mat-table [dataSource]= "DataSource" class="mat-elevation-z8">
+
+  <ng-container matColumnDef="username">
+    <th mat-header-cell *matHeaderCellDef> UserName </th>
+    <td mat-cell *matCellDef="let element"> {{element.username}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="email">
+    <th mat-header-cell *matHeaderCellDef> Name </th>
+    <td mat-cell *matCellDef="let element"> {{element.email}} </td>
+  </ng-container>
+
+  <ng-container >
+    <th mat-header-cell *matHeaderCellDef> Follow </th>
+    <!-- <td><button id="btnId" (click)="followMe(element.email,btnId)">Follow</button></td> -->
+    <!-- <td mat-cell *matCellDef="let element"> <button mat-button color="warn" (click)="followMe(element.email)"> Delete</button> </td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>
+</div> -->
+
+
+<div *ngIf="DataSource.length>0">
+  <table >
+    <tr>
+<th>UserName</th>
+<th>Email</th>
+<th>Follow</th>
+</tr>
+<tr *ngFor="let element of DataSource">
+<td> {{element.username}}</td>
+<td> {{element.email}}</td>
+<td><button class="btn btn-success" (click)="followMe(element.email,btnId)" #btnId> Follow</button></td>
+</tr>
+
+</table>
+  </div>
+
+
+
+
